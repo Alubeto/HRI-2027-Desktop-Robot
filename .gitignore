@@ -1,0 +1,41 @@
+## LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.synctex.gz
+*.toc
+*.bcf
+*.run.xml
+*.dvi
+*.ps
+*.idx
+*.ilg
+*.ind
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+## Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+## Python helpers (if used for figures)
+__pycache__/
+*.pyc
+.venv/
+
+## Local-only tooling
+push_to_overleaf.bat
+*.lock

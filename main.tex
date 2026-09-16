@@ -1,0 +1,129 @@
+%% main.tex — Desktop Robot / Graduated Autonomy CHI 2027 submission
+%% Working title placeholder; revise once results are in.
+\documentclass[sigconf,review,anonymous]{acmart}
+%\documentclass[manuscript, screen, review, anonymous]{acmart}
+\usepackage{subcaption}
+\usepackage{placeins}
+
+%% Keep figures/tables close to their references
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.75}
+
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+%% Rights — fill in after CHI acceptance
+\setcopyright{acmlicensed}
+\copyrightyear{2027}
+\acmYear{2027}
+\acmDOI{XXXXXXX.XXXXXXX}
+%% These commands are for a PROCEEDINGS abstract or paper.
+\acmConference[HRI '27]{ACM International Conference on Human-Robot Interaction}{March 08--12,
+  2027}{Santa Clara, CA}
+
+%% Use author-year citation style for CHI
+\citestyle{acmauthoryear}
+
+\begin{document}
+
+%% =====================================================================
+%% Title — working title; finalize after main study
+%% =====================================================================
+\title[Tell Me Where to Go]{Tell Me Where to Go: How Users Establish Language–Action Mappings in Verbal Robot Control}
+
+%% =====================================================================
+%% Authors — anonymous in review mode; fill in for camera-ready
+%% =====================================================================
+\author{Anonymous Author(s)}
+\affiliation{%
+  \institution{Anonymous Institution}
+  \country{}
+}
+
+%% --- For non-anonymous version, replace block above with the team:
+%% \author{Ruixiang Han}
+%% \email{rh652@cornell.edu}
+%% \affiliation{\institution{Cornell Tech} \city{New York} \country{USA}}
+%% \author{Sophie Bai}
+%% \author{Sirui Wang}
+%% \author{Xiang Chang}
+%% \author{Angela Gui}
+%% \author{Angelique Taylor}
+%% \author{Wendy Ju}
+%% \affiliation{\institution{Cornell Tech} \city{New York} \country{USA}}
+
+%% =====================================================================
+%% Abstract — write last, after Study 1 + Study 2 results
+%% =====================================================================
+
+\begin{abstract}
+Recent advances in large language models and robot foundation models increasingly enable robots to interpret open-ended natural-language instructions. Yet, stronger language understanding does not guarantee that human intent can be reliably translated into embodied action. Natural language remains context-dependent, while spatial reference, control dynamics, sensing, and physical execution can introduce additional uncertainty between what a person says and what a robot ultimately does. Understanding how people navigate these language-to-action mismatches is therefore important for designing future language-enabled robots.
+We study low-level verbal motion control as a controlled lens on this problem, reducing high-level planning complexity while preserving the challenge of grounding natural language in situated physical behavior. We conducted a Wizard-of-Oz study with 12 participants using a desktop robot across two complementary tasks: an open-ended, situated navigation task and a constrained path-following task involving three predefined trajectories. Through analysis of participants' verbal commands, interaction behaviors, think-aloud responses, and post-task interviews, we examine how people control, adjust, and repair verbal robot interaction.
+We derive a taxonomy of verbal robot-control strategies spanning movement magnitude, temporal flow control, spatial frames of reference, and user inference about robot behavior and errors. Our findings suggest that users do not merely issue commands; they actively work to make the mapping between language and robot behavior locally interpretable and controllable. Based on these findings, we derive design implications for future voice-enabled robots that support clarification, calibration, interruption, memory, and actionable feedback. More broadly, we argue that increasingly open language interfaces do not eliminate the grounding problem, but shift part of it from predefined system design to ongoing human--robot interaction.
+\end{abstract}
+
+
+
+%% =====================================================================
+%% CCS concepts + keywords — finalize close to submission
+%% =====================================================================
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10003120.10003121</concept_id>
+       <concept_desc>Human-centered computing~Human computer interaction (HCI)</concept_desc>
+       <concept_significance>500</concept_significance>
+   </concept>
+   <concept>
+       <concept_id>10010147.10010178.10010224</concept_id>
+       <concept_desc>Computing methodologies~Robotic planning</concept_desc>
+       <concept_significance>300</concept_significance>
+   </concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Human-centered computing~Human computer interaction (HCI)}
+\ccsdesc[300]{Computing methodologies~Robotic planning}
+
+\keywords{Human--robot interaction, voice control, Wizard-of-Oz, graduated autonomy, intent ambiguity, shared agency}
+
+\maketitle
+
+%% =====================================================================
+%% Body
+%% =====================================================================
+\input{sections/01-introduction}
+\input{sections/02-related_work}
+\input{sections/03-method}
+\input{sections/04-result}
+\input{sections/05-discussion}
+\input{sections/06-limitation}
+\input{sections/07-conclusion}
+
+%% =====================================================================
+%% Acknowledgments — keep commented during anonymous review
+%% =====================================================================
+%\begin{acks}
+%  TODO
+%\end{acks}
+
+%% =====================================================================
+%% References
+%% =====================================================================
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+%% =====================================================================
+%% Appendices (optional)
+%% =====================================================================
+%\appendix
+%\input{sections/appendix_protocol}
+%\input{sections/appendix_measures}
+
+\end{document}

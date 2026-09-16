@@ -1,0 +1,33 @@
+%% 01-introduction.tex
+%% Status: WRITTEN (v1) — framing stable; expect light revision after results.
+%% Source: NL_Robot_Synthesis_Short Part 1 + Part 3; Summary - Graduated Autonomy
+
+
+\section{Introduction}
+
+Recent advances in large language models (LLMs) and robot foundation models have substantially expanded robots' ability to interpret open-ended natural-language instructions, moving beyond predefined command vocabularies and rigid interaction grammars. \citep{ichter2023saycan, driess2023palme, brohan2023rt2} This shift opens a broader interaction space in which people can express goals, preferences, corrections, and situated needs without first learning a machine-specified control language.
+
+Yet, the ability to interpret increasingly flexible language does not mean that language can be unambiguously translated into embodied behavior. Natural language is inherently context-dependent: an instruction such as ``move a little closer'' leaves the magnitude of ``a little'' underspecified, while expressions such as ``left'' may depend on whether the speaker adopts the human's or the robot's frame of reference. \citep{kocher2020left, li2016spatial} Importantly, uncertainty does not end once the intended meaning has been correctly interpreted. Even an apparently precise instruction such as ``turn 30 degrees'' may result in different physical outcomes due to sensing, control, friction, or other properties of the embodied system. Thus, the path from what a person intends to what a robot ultimately does is not a simple one-to-one mapping.
+
+We conceptualize this process as a grounding chain from \textit{human intent} to \textit{linguistic expression}, \textit{robot interpretation}, and ultimately \textit{embodied execution}. Prior work on natural-language robot interaction has extensively investigated how robots ground linguistic expressions to objects, spatial relations, trajectories, and actions. \citep{tellex2011commands, kollar2010directions, matuszek2013parse} As language-enabled robots become increasingly capable, however, an equally important interactional question emerges: what happens on the human side when the mapping between language and embodied action is incomplete, uncertain, or inconsistent? How do users determine what their words mean for a particular robot, recognize when that mapping breaks down, and adjust the interaction accordingly?
+
+These processes can be difficult to isolate in complex, high-level tasks. If a robot fails when asked to ``organize the desk,'' for example, the source of failure may lie in goal interpretation, task planning, perception, navigation, manipulation, or physical execution. We therefore study verbal motion control as a more controlled lens on language-to-action grounding. Commands such as ``move forward,'' ``turn left,'' or ``keep going until I say stop'' reduce high-level planning complexity while preserving the fundamental challenge of translating natural language into situated physical action. \citep{marge2010routes, marge2015recovery, fong2003questions}
+
+Accordingly, we ask:
+
+\begin{itemize}
+    \item \textbf{RQ1:} What verbal and interaction strategies do people use when controlling a robot's physical motion through natural language?
+    \item \textbf{RQ2:} What challenges and interaction needs emerge as people use, adjust, and repair verbal robot control across different task demands?
+\end{itemize}
+
+To answer these questions, we conducted a Wizard-of-Oz study with 12 participants using a desktop robot. Participants completed two complementary verbal-control tasks: an open-ended, situated navigation task that allowed them to determine how to reach a meaningful goal, and a constrained path-following task that required more precise adherence to three predefined trajectories. Together, these tasks allowed us to observe verbal control under both flexible and precision-sensitive conditions. We analyzed participants' verbal commands, interaction behaviors, think-aloud responses, and post-task interviews.
+
+Our work makes three contributions:
+
+\begin{itemize}
+    \item We present an empirically derived \textbf{taxonomy of verbal robot-control strategies}, characterizing how participants expressed movement magnitude, managed the temporal flow of action, handled spatial frames of reference, and reasoned about robot behavior and errors.
+    
+    \item We characterize the \textbf{interaction challenges and user responses} that arise when natural-language instructions must be translated into situated physical action, including command--execution mismatch, interaction effort, feedback needs, and strategies for adjusting or repairing control.
+    
+    \item Building on these findings, we derive \textbf{design implications for future language-enabled robots}, arguing for systems that not only interpret user commands but also support clarification, calibration, interruption, memory, and actionable feedback as part of ongoing human--robot interaction.
+\end{itemize}
