@@ -1,21 +1,59 @@
-%% 03-framework.tex — Conceptual Framework
-%% Status: WRITTEN (v1) — concepts stable; expect light revision after results.
+%% 03-method.tex — Method
+%% Status: WRITTEN (v2) — structure per outline; figures sized to keep section within one page.
 %% Source: NL_Robot_Synthesis_Short Part 1; Summary - Graduated Autonomy
 
+\FloatBarrier
 \section{Method}
 \label{sec:method}
-\subsection{Desktop Robot}
-We created a differential-drive desktop robot that runs ROS 2 Jazzy on a Raspberry Pi 5 with Dynamixel XL330 motors. It adapts a microphone (ReSpeaker Mic Array v2.0), and a plug-in speaker as the output. These are the only user-level communication channel. We intentional keep the feature of the robot minimal which can only adapt vocie input/output to comply with our study design purpose. Meanwhile, the embodiment is intentionally designed as round, which means we provide ambiguous toward the orientation, so participants should be able to communicate and negotiate with the robot.
-(instruction: put desktop robot picture here)
-\subsection{Deployment and Setting}
-We recruited 12 participants from our campus facility. We conducted a disclosed wizard of Oz experiment with them, where they were told the natrue of the study when they sign the consent form. We request them to communicate with the robot directly, providing only the low level instruction. When they try to provide high level instruction such as "go toward me", or "go toward the vessel", the robot will provide. The finish task one followed by task two.
-\subsubsection{Task one: exploration}
-Task one composites a everday life desktop setting: laptop, vassel, cup, and other office tools were scattered on the desktop. The desktop robot sits at the other corner opposite of the participants, and the participants will need to use verbal instruction to make the robot to move toward them and meanwhile circumstance all the obstacles along the way.  
-(instruction: Put study1 setting, and study one participants picture here)
-\subsubsection{Task two: projected trajectory}
-Task two requests participant to order the robot to move along the pre-defined trajectory and move toward themselves. Instead of the open-ended first task where participants have some improvisation space, this task require a stricter, concise level of wording description for participant to navigate the robot along the line. To give participant time to get familiar themselves with the task, the task is therefore designed in ascending order of difficulty. The first task is a simple right-angle turn, the second is the zig-zag line, and the final and thrid one is a complex route. 
-(instruction: Put the study2 setting1-3 as pictures in here. Together)
-\subsection{Video analysis}
-Three researchers independly watched the video and come out with the coding scheme of the strategies that participants used for the interaction with the desktop robot. Then we gather together to finalized the coding that we are going to share. We created a browser-based video annotator, and each researcher independly coded these video, and then we output these file as 
-(instruction: Put web interface here)
 
+\subsection{Desktop Robot}
+We built a differential-drive desktop robot that runs ROS~2 Jazzy on a Raspberry Pi~5, driving two Dynamixel XL330 motors (Figure~\ref{fig:robot}). A four-microphone array (ReSpeaker Mic Array v2.0) provides always-on voice input and a plug-in speaker provides voice output; the robot carries no exteroceptive sensors, so language is its only channel to and from the user. We intentionally kept the robot this minimal to comply with our study design. The round embodiment is equally deliberate: it presents no visually salient front, leaving the robot's orientation ambiguous so that participants must establish and negotiate frames of reference through the interaction itself.
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.58\columnwidth]{pictures/desktop_robot.png}
+  \caption{The desktop robot. Its round, front-ambiguous embodiment leaves orientation open to negotiation, and voice is its only user-facing communication channel.}
+  \Description{A small circular robot made of stacked laser-cut plates with a black circuit board on top and a dark omni-style wheel visible at its side, sitting on a desk.}
+  \label{fig:robot}
+\end{figure}
+
+\subsection{Deployment and Setting}
+We recruited 12 participants from our campus community and conducted a disclosed Wizard-of-Oz study, in which participants were informed of the nature of the study when signing the consent form. The robot was teleoperated by a researcher, who drove it with a wireless gamepad and voiced its spoken responses. Participants were asked to communicate directly with the robot using only low-level movement instructions. When they issued high-level instructions, such as \emph{``go toward me''} or \emph{``go toward the vessel,''} the robot did not carry them out, and participants had to rephrase using low-level movement primitives. Participants were encouraged to think aloud throughout, completed Task~1 followed by Task~2, and took part in a post-task interview. All sessions were video-recorded.
+
+\subsubsection{Task 1: Exploration}
+Task~1 recreated an everyday desktop scene: a laptop, a vessel, a cup, and other office items were scattered across the surface (Figure~\ref{fig:study1}). The robot started at the corner diagonally opposite the participant, who then used verbal instructions to bring the robot toward them while steering it around the obstacles along the way.
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.49\columnwidth]{pictures/study1_setting.png}\hfill
+  \includegraphics[width=0.49\columnwidth]{pictures/study1_participant.png}
+  \caption{Task 1 setup. Left: the everyday desktop scene with scattered obstacles. Right: a participant verbally guiding the robot toward them.}
+  \Description{Two photographs. Left: a top-down view of a desktop with a glass, a canister, a mug, a framed sign, and flowers scattered on it. Right: a participant seated at a table speaking to the small robot placed among everyday objects.}
+  \label{fig:study1}
+\end{figure}
+
+\subsubsection{Task 2: Projected Trajectory}
+Task~2 asked participants to guide the robot along predefined trajectories drawn on the desktop, each ending at their position. Whereas the open-ended first task left room for improvisation, this task demanded more precise and concise wording to keep the robot on the line. To let participants familiarize themselves with the task, we ordered the three trajectories by ascending difficulty: a simple right-angle turn, a zig-zag line, and a complex route (Figure~\ref{fig:study2}).
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.32\columnwidth]{pictures/study2_setting1.png}\hfill
+  \includegraphics[width=0.32\columnwidth]{pictures/study2_setting2.png}\hfill
+  \includegraphics[width=0.32\columnwidth]{pictures/study2_setting3.png}
+  \caption{The three predefined trajectories of Task 2, in ascending difficulty: a right-angle turn (left), a zig-zag line (center), and a complex route (right).}
+  \Description{Three photographs of cardboard surfaces, each with a drawn path: a single right-angle turn, a zig-zag line, and a longer route with multiple turns.}
+  \label{fig:study2}
+\end{figure}
+
+\subsection{Video Analysis}
+Three researchers independently watched the session videos and drafted coding schemes of the strategies participants used to interact with the robot, then met to consolidate them into a shared, final scheme. We built a browser-based video annotator (Figure~\ref{fig:annotator}) that segments each session into contiguous, labeled intervals, and each researcher independently coded the videos with it. The resulting annotations were exported as structured files of time-stamped, labeled segments for aggregation and analysis. Participants' think-aloud remarks and post-task interviews were also transcribed from the recordings and analyzed alongside the coded segments.
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.92\columnwidth]{pictures/video_annotate.png}
+  \caption{The browser-based video annotator used for coding. Each session is segmented into contiguous, labeled intervals with time stamps, annotator identity, and notes.}
+  \Description{A screenshot of a web interface with a session video at the center, a colored timeline of labeled segments below it, and a side panel for the segment's label, timeframe, annotator, and notes.}
+  \label{fig:annotator}
+\end{figure}
+
+\FloatBarrier
