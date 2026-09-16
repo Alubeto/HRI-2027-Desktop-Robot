@@ -39,3 +39,9 @@ __pycache__/
 ## Local-only tooling
 push_to_overleaf.bat
 *.lock
+
+## Local-only working materials — never push these to Overleaf
+AGENTS.md
+CLAUDE.md
+_materials/
+main.pdf
