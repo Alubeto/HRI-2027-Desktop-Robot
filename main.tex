@@ -9,6 +9,9 @@
 \setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
 \setlength{\floatsep}{8pt plus 2pt minus 2pt}
 \setlength{\intextsep}{8pt plus 2pt minus 2pt}
+%% At most one top float per column, so consecutive [t] figures spread
+%% across columns (and onto the next page) instead of stacking
+\setcounter{topnumber}{1}
 \renewcommand{\topfraction}{0.9}
 \renewcommand{\bottomfraction}{0.8}
 \renewcommand{\textfraction}{0.07}
